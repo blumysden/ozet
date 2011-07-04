@@ -1,0 +1,62 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: Events: {{ performance.title }}{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/performances.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/OZET_6b.jpg" width="1023" height="768" alt="OZET 6b">
+{% endblock %}
+{% block main_content %}
+<section id="event">
+    <h1><a href="/events">Events</a></h1>
+    <h2>{{ performance.title }}</h2>
+    <p>Premier date: {{ performance.premier_date }}<br>{{ performance.venue }}</p>
+    {% if description_html %}
+	<p>{{ description_html|safe }}</p>
+	{% endif %}
+    
+    {% if cast_html %}
+	<h3>Cast</h3>
+	<p>{{ cast_html|safe }}</p>
+	{% endif %}
+	
+	{% if crew_html %}
+	<h3>Crew</h3>
+	<p>{{ crew_html|safe }}</p>
+	{% endif %}
+	
+	{% if videos %}
+	<h3>Videos</h3>
+	<ul class="videos">
+	{% for video in videos %}
+    	<li>
+    	    <a href="{{ video.url }}" class="video">{{ video.title }}</a>
+        </li>
+	{% endfor %}
+	</ul>
+	{% endif %}
+	
+	{% if photos %}
+	<h3>Photos</h3>
+	<ul class="photos">
+	{% for photo in photos %}
+	<li>
+	    <a href="{{ photo.url_m }}" class="photo" rel="{{ performance.permalink }}" title="{{ photo.title }}">
+	        <img src="{{ photo.url_t }}" alt="{{ photo.title }}" height="{{ photo.height_t }}" width="{{ photo.width_t }}">
+        </a>
+    </li>
+	{% endfor %}
+	{% if more_photos %}
+	<li><a href="{{ permalink }}/photos" class="elipse">...</a></li>
+	{% endif %}
+	</ul>
+	{% endif %}
+	
+</section>
+
+{% endblock %}
+{% block additional_js %}
+<script src="{{ MEDIA_URL }}js/colorbox/jquery.colorbox-min.js"></script>
+<script src="{{ MEDIA_URL }}js/performance.js"></script>
+{% endblock %}

@@ -1,0 +1,20 @@
+<section id="music" class="music-list haudio">
+    <h1>Music</h1>
+    <p>Click on a song for music, lyrics, and scores.</p>
+	<h2 class="album">OZET Songbook</h2>
+	<ul>
+	{% for song in songbook_songs %}
+		<li class="item">
+			<a class="fn" href="/music/songbook/{{ song.permalink }}">{{ song.title }}</a>
+		</li>
+	{% endfor %}
+	</ul>
+	<h2 class="album">Transmissions</h2>
+	<ul>
+	{% for song in transmissions %}
+		<li class="item">
+			<a class="fn" href="/music/transmissions/{{ song.permalink }}">{{ song.title }}</a>
+		</li>
+	{% endfor %}
+	</ul>
+</section>

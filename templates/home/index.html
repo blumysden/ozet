@@ -1,0 +1,107 @@
+<!doctype html>  
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>{% block head_title %}OZET{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% block additional_meta %}{% endblock %}
+
+    {% block common_css %}
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Nobile|Cardo">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    {% endblock %}
+    {% block additional_head_css %}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header class="overlay2">
+        <h1><a href="/">OZET</a></h1>
+        <h2>Serve in space.</h2>
+    </header>
+    {% endblock %}
+    <div id="background">
+        {% block background_img %}
+        <img src="{{ MEDIA_URL }}img/OZET_4c.jpg" width="1535" height="1151" alt="OZET">
+        {% endblock %}
+    </div>
+    {% block main_nav %}
+    <nav id="main_nav" class="overlay">
+        <ul>
+            <li id="nav_events">
+                <a href="/events">Events</a>
+            </li>
+            <li id="nav_music">
+                <a href="/music">Music</a>
+            </li>
+            <li id="nav_video">
+                <a href="/video">Video</a>
+            </li>
+            <li id="nav_history">
+                <a href="/history">History</a>
+            </li>
+            <li id="nav_artists">
+                <a href="/artists">Artists</a>
+            </li>
+			<li id="nav_contact">
+                <a href="#">Contact</a>
+				<ul id="contact_methods">
+					<li>info @ ozet dot us</li>
+					<li>
+						<a href="http://www.facebook.com/the.ozet">FB: the.ozet</a>
+					</li>
+					<li>
+						<a href="http://twitter.com/the_ozet">TW: @the_ozet</a>
+					</li>
+				</ul>
+            </li>
+        </ul>
+    </nav>
+    <hr>
+    {% endblock %}
+    <div id="container">
+        <div id="main_content" class="overlay2">
+            {% block main_content %}
+            {% include "home/log.html" %}
+            {% endblock %}
+        </div>
+        
+        <div id="additional_content" class="overlay2">
+            {% block additional_content %}{% endblock %}
+        </div>
+    </div>
+    {% block common_js %}
+    <!-- TODO: Upgrade to 1.4.4 when I figure out latest version of jQuery Player -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="{{ MEDIA_URL }}js/jquery-1.4.2.min.js"><\/script>')</script>
+    <script src="{{ MEDIA_URL }}js/common.js" type="text/javascript" charset="utf-8"></script>
+
+    <!--[if lt IE 7 ]>
+    <script src="{{ MEDIA_URL }}js/dd_belatedpng.js?v=1"></script>
+    <![endif]-->
+    {% endblock %}
+    
+    {% block additional_js %}
+    <script src="{{ MEDIA_URL }}js/colorbox/jquery.colorbox-min.js"></script>
+    <script src="{{ MEDIA_URL }}js/performance.js"></script>
+    {% endblock %}
+    
+    {% block google_analytics %}
+    <script>
+        var _gaq = [['_setAccount', 'UA-15477683-1'], ['_trackPageview']]; 
+        (function(d, t) {
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.async = true; g.src = '//www.google-analytics.com/ga.js'; s.parentNode.insertBefore(g, s);
+        })(document, 'script');
+    </script>
+    {% endblock %}
+    
+</body>
+</html>

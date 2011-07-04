@@ -1,0 +1,21 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: Photos{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/OZET_8.jpg" width="1535" height="1151" alt="OZET 3b">
+{% endblock %}
+{% block main_content %}
+<section id="photos">
+    <h1>Photos</h1>
+	<h2>{{ performance.title }}</h2>
+    {% for photo in photos %}
+	<img src="{{ photo.url_t }}" width="{{ photo.width_t }}" height="{{ photo.height_t }}">
+	{% endfor %}
+</section>
+{% endblock %}
+{% block additional_js %}
+<script src="{{ MEDIA_URL }}js/colorbox/jquery.colorbox-min.js"></script>
+<script src="{{ MEDIA_URL }}js/performance.js"></script>
+{% endblock %}

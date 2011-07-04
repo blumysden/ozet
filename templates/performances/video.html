@@ -1,0 +1,39 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: Video{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/video.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/OZET_8.jpg" width="1535" height="1151" alt="OZET 3b">
+{% endblock %}
+{% block main_content %}
+<section id="video">
+    <h1>Video</h1>
+    
+    {% for performance in performances %}
+    <h2 class="performance"><span>from</span> {{ performance.title }}</h2>
+	<ul>
+	{% for video in videos %}
+	    {% if video.performance_id == performance.id %}
+		<li class="item">
+		    <a href="{{ video.url }}" class="video">{{ video.title }}</a>
+		</li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+	{% endfor %}
+	<h2>Other Videos</h2>
+	<ul>
+	{% for video in np_videos %}
+		<li class="item">
+			<a href="{{ video.url }}" title="{{ video.title }}" class="video">{{ video.title }}</a>
+		</li>
+	{% endfor %}
+	</ul>
+</section>
+{% endblock %}
+{% block additional_js %}
+<script src="{{ MEDIA_URL }}js/colorbox/jquery.colorbox-min.js"></script>
+<script src="{{ MEDIA_URL }}js/performance.js"></script>
+{% endblock %}

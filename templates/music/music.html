@@ -1,0 +1,11 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: Music{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/music.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/OZET_8.jpg" width="1535" height="1151" alt="OZET 3b">
+{% endblock %}
+{% block main_content %}
+{% include "music/music_list.html" %}
+{% endblock %}

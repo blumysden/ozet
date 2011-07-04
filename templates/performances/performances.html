@@ -1,0 +1,22 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: Events{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/performances.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/OZET_6b.jpg" width="1023" height="768" alt="OZET 6b">
+{% endblock %}
+{% block main_content %}
+<section id="events">
+    <h1>Events</h1>
+    <p>Click on a title for more information.</p>
+    <ul>
+	{% for performance in performances %}
+		<li class="item">
+			<h2><a href="{{ performance.permalink }}">{{ performance.title }}</a></h2>
+			<p>Premier date: {{ performance.premier_date }}<br>{{ performance.venue }}</p>
+		</li>
+	{% endfor %}
+	</ul>
+</section>
+{% endblock %}

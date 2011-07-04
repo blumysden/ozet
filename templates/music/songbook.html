@@ -1,0 +1,46 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: OZET Songbook: {{ song.title }}{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/music.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/OZET_8.jpg" width="1535" height="1151" alt="OZET 3b">
+{% endblock %}
+{% block main_content %}
+<section id="songbook_songs">
+	<h1><a href="/music">Music</a>: OZET Songbook</h1>
+	<h2>{{ song.title }}</h2>
+	
+	{% if recordings %}
+	<h3>Recordings</h3>
+	{% for recording in recordings %}
+    	<div class="recording clearfix">
+    		<h4>{{ recording.title }}</h4>
+    		{% include "common/player_controls.html" %}
+    	</div>
+	{% endfor %}
+	{% include "common/player.html" %}
+	{% endif %}
+	
+	{% if score_files %}
+		{% for file in score_files %}
+		{% if forloop.counter == 1 %}<h3>{% endif %}
+		<a class="score" rel="score" href="{{ MEDIA_URL }}scores/{{ song.score_dir }}/{{file}}">View Score</a>
+		{% if forloop.counter == 1 %}</h3>{% endif %}
+		{% endfor %}
+	{% endif %}
+	
+	{% if song.lyrics %}
+	<h3>Lyrics</h3>
+	<p class="lyrics">{{ lyrics_html|safe }}</p>
+	{% endif %}
+
+</section>
+{% endblock %}
+{% block additional_js %}
+<script src="{{ MEDIA_URL }}js/jQuery.jPlayer.1.2.0/jquery.jplayer.min.js"></script>
+<script src="{{ MEDIA_URL }}js/ozet_player.js"></script>
+<script src="{{ MEDIA_URL }}js/colorbox/jquery.colorbox-min.js"></script>
+<script src="{{ MEDIA_URL }}js/music.js"></script>
+{% endblock %}
