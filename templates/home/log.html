@@ -1,8 +1,29 @@
 <section id="log">
     <h1>Log</h1>
 
-
+{% for entry in log_entries %}
 <article>
+	<h2>{{ entry.title }}</h2>
+	<time datetime="{{ entry.post_date|date:"Y-m-d" }}">Posted on {{ entry.post_date }}</time>
+	{{ entry.entry|safe }}
+</article>
+{% endfor %}
+{% if log_pagination.paginator.num_pages > 1 %}
+<nav class="pagination">
+    <span class="step-links">
+        <span class="current">
+            Page {{ log_pagination.number }} of {{ log_pagination.paginator.num_pages }}.
+        </span>
+        {% if log_pagination.has_previous %}
+            <a href="{% url ozet.log.views.log log_pagination.previous_page_number %}" class="pagination-prev">previous</a>
+        {% endif %}
+        {% if log_pagination.has_next %}
+            <a href="{% url ozet.log.views.log log_pagination.next_page_number %}" class="pagination-next">next</a>
+        {% endif %}
+    </span>
+</nav>
+{% endif %}
+<!--article>
 	<h2>The Smuggler</h2>
 	<time datetime="2011-05-6">Posted on May 8, 2011</time>
 	<p>&quot;Hard to keep your hands clean when you've got to bury your stash.&quot;<br/>
@@ -51,5 +72,5 @@
         <p>We've also started posting <a href="/music/transmissions">transmissions</a>, short experimental pieces (all musical so far), to the site.  Check back, as we'll be posting more of these on a regular basis.</p>
         <p>And if you're interested in keeping up with all the OZET news, come to our <a href="http://www.facebook.com/the.ozet">facebook page</a> and follow us on Twitter: <a href="http://twitter.com/the_ozet">@the_ozet</a>.</p>
         <p>Thanks, as always, for being part of OZET.</p>
-    </article>
+    </article -->
 </section>
