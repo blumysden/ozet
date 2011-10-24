@@ -14,7 +14,7 @@
     {% block common_css %}
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Nobile|Cardo">
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css?v=2" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css?v=3" type="text/css" media="screen" title="no title" charset="utf-8">
     {% endblock %}
     {% block additional_head_css %}
     <link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -35,8 +35,14 @@
     {% block main_nav %}
     <nav id="main_nav" class="overlay">
         <ul>
+			<li id="nav_history">
+                <a href="/history">History</a>
+            </li>
             <li id="nav_events">
                 <a href="/events">Events</a>
+            </li>
+            <li id="nav_artists">
+                <a href="/artists">Artists</a>
             </li>
             <li id="nav_music">
                 <a href="/music">Music</a>
@@ -44,11 +50,8 @@
             <li id="nav_video">
                 <a href="/video">Video</a>
             </li>
-            <li id="nav_history">
-                <a href="/history">History</a>
-            </li>
             <li id="nav_artists">
-                <a href="/artists">Artists</a>
+                <a href="/log">Log</a>
             </li>
 			<li id="nav_contact">
                 <a href="#">Contact</a>
@@ -69,7 +72,15 @@
     <div id="container">
         <div id="main_content" class="overlay2">
             {% block main_content %}
-            {% include "home/log.html" %}
+            {# include "home/log.html" #}
+			<p id="summary">is an ongoing collaboration between <a href="/artists">Aaron Meicht and Scott Blumenthal</a> that encompasses a variety of live <a href="/events">performances</a>, <a href="/video">films</a>, studio-produced song <a href="/music">recordings</a>, and experiments with new media. Each piece of the project draws on and expands the fictional <a href="/history">history</a> of the Collective Sphere OZET.</p>
+			<p id="teaser_promo"><a href="http://www.youtube.com/v/LAWYD-1JRAE" title="OZET Trailer 2011" class="video">Watch a short film</a> of some highlights from previous OZET projects.</p>
+			<!--figure>
+				<a href="http://www.youtube.com/v/LAWYD-1JRAE" title="OZET Trailer 2011" class="video">
+					<img src="//i1.ytimg.com/vi/LAWYD-1JRAE/default.jpg" alt="Thumbnail"title="OZET Trailer 2011">
+				</a>
+				<figcaption>Clips from OZET</figcaption>
+			</figure-->
             {% endblock %}
         </div>
         

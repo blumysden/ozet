@@ -20,10 +20,10 @@ def get_paginated_log_entries(page):
         'log_pagination': paginated_entries
     }
 
-def log(request, page):
+def log(request, page=1):
     context = get_paginated_log_entries(page)
-    return render_to_response('home/index.html', context, context_instance=RequestContext(request))
+    return render_to_response('home/log.html', context, context_instance=RequestContext(request))
 
 def entry(request, entry_id):
     context = {}
-    return render_to_response('home/index.html', context, context_instance=RequestContext(request))
+    return render_to_response('home/log.html', context, context_instance=RequestContext(request))
