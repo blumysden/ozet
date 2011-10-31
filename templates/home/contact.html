@@ -1,0 +1,39 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: Contact{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/contact.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/OZET_7c.jpg" width="2047" height="1535" alt="OZET 7b">
+{% endblock %}
+{% block main_content %}
+<section id="contact">
+    <h1>Contact</h1>
+	<form  action="http://ozet.us2.list-manage2.com/subscribe/post?u=887c72dc0b933c7b5b93dbb37&amp;id=d8d0f82123" method="post" target="_blank">
+		<p>Join our mailing list.<br><span>(You will be redirected to our sign-up confirmation page.)</span></p>
+		<fieldset>
+			<label for="mce_email">Your email:
+				<input type="email" value="" name="EMAIL" class="email" id="mce_email">
+			</label>
+		</fieldset>
+		<fieldset>
+			<label for="mce_merge1">First name:
+				<input type="text" value="" name="MERGE1" class="name" id="mce_merge1">
+			</label>
+			<label for="mce_merge2" id="merge2_label">Last name:
+				<input type="text" value="" name="MERGE2" class="name" id="mce_merge2">
+			</label>
+		</fieldset>
+		<input type="submit" value="Subscribe" id="mce_submit">
+	</form>
+	<ul>
+		<li>EMAIL : info@ozet.us</li>
+		<li>
+			<a href="http://www.facebook.com/the.ozet">FB : the.ozet</a>
+		</li>
+		<li>
+			<a href="http://twitter.com/the_ozet">TW : @the_ozet</a>
+		</li>
+	</ul>
+</section>
+{% endblock %}
