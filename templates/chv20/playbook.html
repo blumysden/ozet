@@ -1,0 +1,77 @@
+<!doctype html>  
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>{% block head_title %}Common Hall Village 20: Playbook{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% block additional_meta %}{% endblock %}
+
+    {% block common_css %}
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Nobile|Cardo|Kameron">
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/chv20/playbook.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    {% endblock %}
+    {% block additional_head_css %}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <header>
+        <h1><a href="/">OZET</a></h1>
+    </header>
+	<h2>Common Hall Village 20</h2>
+    {% endblock %}
+    {% block main_nav %}
+    <nav id="main_nav" class="overlay">
+        <ul>
+			{% for scene in scenes %}
+			<li>
+                <a href="#{{ scene.title|slugify }}">{{ scene.title }}</a>
+            </li>
+			{% endfor %}
+        </ul>
+    </nav>
+    {% endblock %}
+    <div id="container">
+        <div id="main_content">
+            {% block main_content %}
+			
+			{% for scene in scenes %}
+				<h3 id="{{ scene.title|slugify }}">{{ scene.title }}</h3>
+				{% include scene.template %}
+			{% endfor %}
+			
+            {% endblock %}
+        </div>
+    </div>
+    {% block common_js %}
+    <!-- TODO: Upgrade to 1.4.4 when I figure out latest version of jQuery Player -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="{{ MEDIA_URL }}js/jquery-1.4.2.min.js"><\/script>')</script>
+    <!--[if lt IE 7 ]>
+    <script src="{{ MEDIA_URL }}js/dd_belatedpng.js?v=1"></script>
+    <![endif]-->
+    {% endblock %}
+    
+    {% block additional_js %}
+    <script src="{{ MEDIA_URL }}js/colorbox/jquery.colorbox-min.js"></script>
+    {% endblock %}
+    
+    {% block google_analytics %}
+    <script>
+        var _gaq = [['_setAccount', 'UA-15477683-1'], ['_trackPageview']]; 
+        (function(d, t) {
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.async = true; g.src = '//www.google-analytics.com/ga.js'; s.parentNode.insertBefore(g, s);
+        })(document, 'script');
+    </script>
+    {% endblock %}
+    
+</body>
+</html>
