@@ -4,8 +4,24 @@ from django.template import RequestContext
 
 SCENE_ORDER = [
     {
+        "template": "chv20/arrival.html",
+        "title": "The Arrival"
+    },
+    {
+        "template": "chv20/lullaby.html",
+        "title": "Lullaby from the First Generation to the Last"
+    },
+    {
         "template": "chv20/councilor.html",
         "title": "The Councilor's Speech"
+    },
+    {
+        "template": "chv20/villager_actions.html",
+        "title": "Villager Actions"
+    },
+    {
+        "template": "chv20/overheard.html",
+        "title": "Overheard"
     }
 ]
 

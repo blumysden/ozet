@@ -40,14 +40,12 @@
     {% endblock %}
     <div id="container">
         <div id="main_content">
-            {% block main_content %}
-			
+			{% include "chv20/personae.html" %}
 			{% for scene in scenes %}
 				<h3 id="{{ scene.title|slugify }}">{{ scene.title }}</h3>
 				{% include scene.template %}
 			{% endfor %}
 			
-            {% endblock %}
         </div>
     </div>
     {% block common_js %}
