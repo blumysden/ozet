@@ -31,3 +31,6 @@ def playbook(request):
     }
     return render_to_response('chv20/playbook.html', context, \
         context_instance=RequestContext(request))
+
+def community(request):
+    return render_to_response('chv20/community.html', context_instance=RequestContext(request))
