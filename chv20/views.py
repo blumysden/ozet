@@ -16,6 +16,14 @@ SCENE_ORDER = [
         "title": "The Councilor's Speech"
     },
     {
+        "template": "chv20/ode.html",
+        "title": "An Ode to Our Travellers of the Constellations"
+    },
+    {
+        "template": "chv20/mayor.html",
+        "title": "The Mayor Speaks"
+    },
+    {
         "template": "chv20/villager_actions.html",
         "title": "Villager Actions"
     },
