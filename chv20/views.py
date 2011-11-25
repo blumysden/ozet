@@ -24,6 +24,18 @@ SCENE_ORDER = [
         "title": "The Mayor Speaks"
     },
     {
+        "template": "chv20/when_my_children.html",
+        "title": "When My Children Arrive"
+    },
+    {
+        "template": "chv20/subversives.html",
+        "title": "The Subversives"
+    },
+    {
+        "template": "chv20/response.html",
+        "title": "The Response"
+    },
+    {
         "template": "chv20/villager_actions.html",
         "title": "Villager Actions"
     },
