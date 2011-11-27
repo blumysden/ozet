@@ -36,6 +36,14 @@ SCENE_ORDER = [
         "title": "The Response"
     },
     {
+        "template": "chv20/the_broadcast_ends.html",
+        "title": "The Council Ends the Festival"
+    },
+    {
+        "template": "chv20/tamaz_song.html",
+        "title": "Tamaz's Song"
+    },
+    {
         "template": "chv20/villager_actions.html",
         "title": "Villager Actions"
     },
