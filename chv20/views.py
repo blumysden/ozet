@@ -8,6 +8,10 @@ SCENE_ORDER = [
         "title": "The Arrival"
     },
     {
+        "template": "chv20/the_broadcast_begins.html",
+        "title": "The Broadcast Begins"
+    },
+    {
         "template": "chv20/lullaby.html",
         "title": "Lullaby from the First Generation to the Last"
     },

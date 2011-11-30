@@ -14,7 +14,7 @@
     {% block common_css %}
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Nobile|Cardo">
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css?v=4" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css?v=5" type="text/css" media="screen" title="no title" charset="utf-8">
     {% endblock %}
     {% block additional_head_css %}
     <link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -65,6 +65,7 @@
             {% block main_content %}
             {# include "home/log.html" #}
 			<p id="summary">is an ongoing collaboration between <a href="/artists">Aaron Meicht and Scott Blumenthal</a> that encompasses a variety of live <a href="/events">performances</a>, <a href="/video">films</a>, studio-produced song <a href="/music">recordings</a>, and experiments with new media. Each piece of the project draws on and expands the fictional <a href="/history">history</a> of the Collective Sphere OZET.</p>
+			<p id="upcoming">OZET's newest piece, <a href="{% url performances.views.performance 'chv20' %}">Common Hall Village 20</a>, will premier in New York City on January 26 and run through February 4, 2012.</p>
 			<p id="teaser_promo"><a href="http://www.youtube.com/v/LAWYD-1JRAE" title="OZET Trailer 2011" class="video">Watch a short film</a> of some highlights from previous OZET projects.</p>
 			<!--figure>
 				<a href="http://www.youtube.com/v/LAWYD-1JRAE" title="OZET Trailer 2011" class="video">
