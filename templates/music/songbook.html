@@ -1,8 +1,8 @@
 {% extends "home/index.html" %}
 {% block head_title %}OZET: OZET Songbook: {{ song.title }}{% endblock %}
 {% block additional_head_css %}
-<link rel="stylesheet" href="{{ MEDIA_URL }}css/music.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/music.css?v=2" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox-1.3.18/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
 {% endblock %}
 {% block background_img %}
 <img src="{{ MEDIA_URL }}img/OZET_8.jpg" width="1535" height="1151" alt="OZET 3b">
@@ -20,7 +20,7 @@
     		{% include "common/player_controls.html" %}
     	</div>
 	{% endfor %}
-	{% include "common/player.html" %}
+	{% include "common/jplayer_ozet.html" %}
 	{% endif %}
 	
 	{% if score_files %}
@@ -39,8 +39,8 @@
 </section>
 {% endblock %}
 {% block additional_js %}
-<script src="{{ MEDIA_URL }}js/jQuery.jPlayer.1.2.0/jquery.jplayer.min.js"></script>
-<script src="{{ MEDIA_URL }}js/ozet_player.js"></script>
-<script src="{{ MEDIA_URL }}js/colorbox/jquery.colorbox-min.js"></script>
+<script src="{{ MEDIA_URL }}js/jQuery.jPlayer.2.1.0/jquery.jplayer.min.js"></script>
+<script src="{{ MEDIA_URL }}js/ozet_player2.js"></script>
+<script src="{{ MEDIA_URL }}js/colorbox-1.3.18/jquery.colorbox-min.js"></script>
 <script src="{{ MEDIA_URL }}js/music.js"></script>
 {% endblock %}

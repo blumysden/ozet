@@ -1,7 +1,7 @@
 {% extends "home/index.html" %}
 {% block head_title %}OZET: Transmissions{% endblock %}
 {% block additional_head_css %}
-<link rel="stylesheet" href="{{ MEDIA_URL }}css/music.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/music.css?v=2" type="text/css" media="screen" title="no title" charset="utf-8">
 {% endblock %}
 {% block background_img %}
 <img src="{{ MEDIA_URL }}img/OZET_8.jpg" width="1535" height="1151" alt="OZET 3b">
@@ -15,14 +15,14 @@
 		{% include "common/player_controls.html" %}
 	</div>
 	{% endfor %}
-	{% include "common/player.html" %}
+	{% include "common/jplayer_ozet.html" %}
 </section>
 {% endblock %}
 {% block additional_js %}
-<script src="{{ MEDIA_URL }}js/jQuery.jPlayer.1.2.0/jquery.jplayer.min.js"></script>
-<script src="{{ MEDIA_URL }}js/ozet_player.js"></script>
+<script src="{{ MEDIA_URL }}js/jQuery.jPlayer.2.1.0/jquery.jplayer.min.js"></script>
+<script src="{{ MEDIA_URL }}js/ozet_player2.js"></script>
 <script type="text/javascript" charset="utf-8">
-    $(document).bind('jPlayer:ready', function(){
+    $(document).bind('ozetPlayer:ready', function(e, $playerElem){
         $('#transmission-{{ autoplay }} .player-play').click();
     });
 </script>
