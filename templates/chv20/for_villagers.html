@@ -1,0 +1,92 @@
+{% extends "home/index.html" %}
+{% block head_title %}OZET: CHV20 Community{% endblock %}
+{% block additional_head_css %}
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/chv20/community.css?v=2" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/music.css?v=2" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox-1.3.18/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+{% endblock %}
+{% block background_img %}
+<img src="{{ MEDIA_URL }}img/chv20_bg.jpg" width="1024" height="1024" alt="Common Hall Village 20">
+{% endblock %}
+{% block main_content %}
+<section id="chv20-for-villagers">
+    <h1>For the Villagers</h1>
+	<h2>The Outline</h2>
+	<p>Here is a <a href="{{ MEDIA_URL }}pdfs/chv20_outline.pdf" target="_blank">PDF version</a> of the outline for the piece we passed out at rehearsal.</p>
+	<h2>The Songs</h2>
+	<p>Below you'll find mp3s of the songs sung by the pioneers of Village 20 during the celebration of the Festival of the Fifteenth Generation.  You can listen to the songs right here on the page or, if you want to download the mp3 to listen offline, just right click the play button and choose the option like "Save link as..."</p>
+	<div class="recording clearfix">
+		<h4>Dogs Are Loyal</h4>
+		<ul class="player-controls clearfix">
+			<li>
+			    <a class="player-play" href="{{ MEDIA_URL }}recordings/dogs_are_loyal.mp3" title="play">play</a>
+			</li>
+			<li>
+			    <a class="player-pause" href="#" title="pause">pause</a>
+			</li>
+			<li>
+			    <a class="player-stop" href="#" title="stop">stop</a>
+			</li>
+		</ul>
+		<p class="score"><a href="{{ MEDIA_URL }}pdfs/dogs_are_loyal.pdf" target="_blank">score</a></p>
+	</div>
+	<div class="recording clearfix">
+		<h4>Lullaby from the First Generation to the Last</h4>
+		<ul class="player-controls clearfix">
+			<li>
+			    <a class="player-play" href="{{ MEDIA_URL }}recordings/lullaby-rehearse.mp3" title="play">play</a>
+			</li>
+			<li>
+			    <a class="player-pause" href="#" title="pause">pause</a>
+			</li>
+			<li>
+			    <a class="player-stop" href="#" title="stop">stop</a>
+			</li>
+		</ul>
+		<p class="score"><a href="{{ MEDIA_URL }}pdfs/lullaby.pdf" target="_blank">score</a></p>
+	</div>
+	<div class="recording clearfix">
+		<h4>An Ode to Our Travelers of the Constellations</h4>
+		<ul class="player-controls clearfix">
+			<li>
+			    <a class="player-play" href="{{ MEDIA_URL }}recordings/constellations_nov11.mp3" title="play">play</a>
+			</li>
+			<li>
+			    <a class="player-pause" href="#" title="pause">pause</a>
+			</li>
+			<li>
+			    <a class="player-stop" href="#" title="stop">stop</a>
+			</li>
+		</ul>
+		<p class="score"><a href="{{ MEDIA_URL }}pdfs/constellations.pdf" target="_blank">score</a></p>
+	</div>
+	<div class="recording clearfix">
+		<h4>When My Children Arrive</h4>
+		<ul class="player-controls clearfix">
+			<li>
+			    <a class="player-play" href="{{ MEDIA_URL }}recordings/when_my_children_arrive.mp3" title="play">play</a>
+			</li>
+			<li>
+			    <a class="player-pause" href="#" title="pause">pause</a>
+			</li>
+			<li>
+			    <a class="player-stop" href="#" title="stop">stop</a>
+			</li>
+		</ul>
+		<p class="score"><a href="{{ MEDIA_URL }}pdfs/when_my_children_arrive.pdf" target="_blank">score</a></p>
+	</div>
+	<h2>The Dance</h2>
+	<p><a href="http://www.youtube.com/v/hv2PBcWNC7Q" title="Tamaz's Dance" class="video" id="tamaz-dance">Tamaz's Dance</a></p></p>
+	{% include "common/jplayer_ozet.html" %}
+	<h2>Costumes</h2>
+	<p>Here is a sketch by Kathleen of a basic look for the male and female villagers.  You can use this as a guide when thinking about putting your own costumes together.</p>
+	<p><img src="{{ MEDIA_URL }}img/community_people.jpg" alt="villagers" width="450"></p>
+</section>
+{% endblock %}
+{% block additional_js %}
+<script src="{{ MEDIA_URL }}js/jQuery.jPlayer.2.1.0/jquery.jplayer.min.js"></script>
+<script src="{{ MEDIA_URL }}js/ozet_player2.js"></script>
+<script src="{{ MEDIA_URL }}js/colorbox-1.3.18/jquery.colorbox-min.js"></script>
+<script src="{{ MEDIA_URL }}js/music.js"></script>
+<script src="{{ MEDIA_URL }}js/performance.js"></script>
+{% endblock %}

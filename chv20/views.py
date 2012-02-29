@@ -66,3 +66,6 @@ def playbook(request):
 
 def community(request):
     return render_to_response('chv20/community.html', context_instance=RequestContext(request))
+    
+def for_villagers(request):
+    return render_to_response('chv20/for_villagers.html', context_instance=RequestContext(request))
