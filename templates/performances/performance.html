@@ -1,7 +1,7 @@
 {% extends "home/index.html" %}
 {% block head_title %}OZET: Events: {{ performance.title }}{% endblock %}
 {% block additional_head_css %}
-<link rel="stylesheet" href="{{ MEDIA_URL }}css/performances.css?v=2" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ MEDIA_URL }}css/performances.css?v=3" type="text/css" media="screen" title="no title" charset="utf-8">
 <link rel="stylesheet" href="{{ MEDIA_URL }}js/colorbox-1.3.18/example1/colorbox.css" type="text/css" media="screen" title="no title" charset="utf-8">
 {% endblock %}
 {% block background_img %}
@@ -41,7 +41,7 @@
 	<h3>Photos</h3>
 	<ul class="photos">
 	{% for photo in photos %}
-	<li>
+	<li class="thumbnail-w-{{ photo.width_t }}">
 	    <a href="{{ photo.url_m }}" class="photo" rel="{{ performance.permalink }}" title="{{ photo.title }}">
 	        <img src="{{ photo.url_t }}" alt="{{ photo.title }}" height="{{ photo.height_t }}" width="{{ photo.width_t }}">
         </a>
