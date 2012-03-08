@@ -4,6 +4,7 @@ urlpatterns = patterns('ozet.home.views',
     (r'^history', 'history'),
     (r'^artists', 'artists'),
     (r'^contact', 'contact'),
+    (r'^family_tree', 'tree'),
     (r'^$', 'index'),
 )
 

@@ -12,3 +12,6 @@ def history(request):
     
 def contact(request):
     return render_to_response('home/contact.html', context_instance=RequestContext(request))
+    
+def tree(request):
+    return render_to_response('home/tree.html', context_instance=RequestContext(request))
